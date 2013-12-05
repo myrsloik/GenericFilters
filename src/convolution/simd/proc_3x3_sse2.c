@@ -162,7 +162,6 @@ proc_9_10_sse2(convolution_t *ch, uint8_t *buff, int bstride, int width,
             _mm_store_si128((__m128i *)(dstp + x), sum[0]);
         }
 
-        srcp += stride * (y < height - 2);
         dstp += stride;
         p0 = p1;
         p1 = p2;
