@@ -107,7 +107,7 @@ proc_non_max_suppress(const float *srcp, float *dstp, const uint8_t *direction,
     int pos[8] = {1, 1 - stride, 0, stride, 0, 0, 0, 1 + stride};
 
     for (int y = 1; y < height - 1; y++) {
-        direction += stride;
+
         dstp[0] = 0.0f;
         
         for (int x = 1; x < width - 1; x++) {
@@ -119,7 +119,9 @@ proc_non_max_suppress(const float *srcp, float *dstp, const uint8_t *direction,
         dstp[width - 1] = 0.0f;
         srcp += stride;
         dstp += stride;
+        direction += stride;
     }
+
     memset(dstp, 0, stride * sizeof(float));
 }
 
