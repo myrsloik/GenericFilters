@@ -70,7 +70,7 @@ STRIP="strip"
 SIMD="-DUSE_X86_INTRINSICS"
 DEBUG=""
 LIBNAME=""
-CFLAGS="-Wshadow -Wall -std=gnu99 -I. -I$SRCDIR -I$SRCDIR/common -I$SRCDIR/convolution -I$SRCDIR/neighbors -I$SRCDIR/alone -I$SRCDIR/specific"
+CFLAGS="-Wshadow -Wall -std=gnu99 -I. -I$SRCDIR -I$SRCDIR/common -I$SRCDIR/convolution -I$SRCDIR/neighbors -I$SRCDIR/alone -I$SRCDIR/specific -fvisibility=hidden"
 LDFLAGS="-shared"
 DEPFLAG="-msse2"
 
