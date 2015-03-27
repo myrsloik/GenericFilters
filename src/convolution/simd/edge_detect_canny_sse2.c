@@ -74,6 +74,7 @@ proc_edge_detect(float *buff, int bstride, const float *srcp, float *dstp,
     srcp += stride;
     line_copyf(p1, srcp, width, 1);
     memset(dstp, 0, stride * sizeof(float));
+    dstp += stride;
 
     for (int y = 1; y < height - 1; y++) {
         srcp += stride;
