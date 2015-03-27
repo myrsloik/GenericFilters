@@ -112,7 +112,7 @@ proc_16bit_sse2(uint8_t *buff, int bstride, int width, int height, int stride,
                 }
             }
             
-            __m128i limit = _mm_adds_epu8(src, xth);
+            __m128i limit = _mm_adds_epu16(src, xth);
             max = MM_MIN_EPU16(max, limit);
             _mm_store_si128((__m128i *)(dstp + x), max);
         }
