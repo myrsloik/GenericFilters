@@ -90,7 +90,7 @@ proc_16bit_sse2(uint8_t *buff, int bstride, int width, int height, int stride,
     uint16_t *orig = p0, *end = p2;
     uint16_t threshold = (uint16_t)th;
 
-    line_copy16(p0, srcp, width, 1);
+    line_copy16(p0, srcp + stride, width, 1);
     line_copy16(p1, srcp, width, 1);
 
     __m128i xth = _mm_set1_epi16((int16_t)threshold);
