@@ -183,7 +183,7 @@ proc_16bit_sse2(convolution_t *ch, uint8_t *buff, int bstride, int width,
     int border = ch->length / 2;
 
     for (int y = 0; y < height; y++) {
-        line_copy16(p0, srcp, width, 1);
+		line_copy16(p0, srcp, width, border);
 
         for (int x = 0; x < width; x += 8) {
             __m128 sum[2];
